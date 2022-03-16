@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+<hibernate-mapping>
+    <class name="com.soumya.pojo.EProduct" table="eproduct">
+        <id name="ID" column="pid">
+            <generator class="increment"/>
+        </id>
+        <property name="name" type="string" column="pname"/>
+        <property name="price" type="double" column="price"/>
+        <property name="dateAdded" type="timestamp" column="DATE_ADDED"/>
+
+    </class>
+</hibernate-mapping>
+
+    
