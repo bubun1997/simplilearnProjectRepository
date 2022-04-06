@@ -1,4 +1,4 @@
-package com;
+package com.soumya.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,6 +10,8 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebxmlConfig implements WebApplicationInitializer{
+
+	
 
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
@@ -25,6 +27,7 @@ public class WebxmlConfig implements WebApplicationInitializer{
           customDispatcher.setLoadOnStartup(1);
           
           customDispatcher.addMapping("/welcometo/*");
+          
 	}
 
 	

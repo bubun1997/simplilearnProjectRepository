@@ -1,4 +1,4 @@
-package com;
+package com.soumya.config;
 
 import java.util.Properties;
 
@@ -27,7 +27,7 @@ import com.soumya.model.User;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"com"})
+@ComponentScan({"com.soumya"})
 @EnableTransactionManagement
 @PropertySource(value = { "classpath:application.properties" })
 public class SpringConfig {
@@ -44,6 +44,7 @@ public class SpringConfig {
 //	        viewResolver.setViewClass(JstlView.class);
 	        viewResolver.setPrefix("/WEB-INF/views/");
 	        viewResolver.setSuffix(".jsp");
+	        
 	        return viewResolver;
 	    }
 	     
@@ -52,6 +53,7 @@ public class SpringConfig {
 	    	
 	        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
 	        messageSource.setBasename("messages");
+	        
 	        return messageSource;
 	    }
 	    
@@ -62,7 +64,7 @@ public class SpringConfig {
 	    	
 	        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 	        sessionFactory.setDataSource(dataSource());
-	        sessionFactory.setPackagesToScan(new String[] {"com"});
+	        sessionFactory.setPackagesToScan(new String[] {"com.soumya"});
 	        sessionFactory.setAnnotatedClasses(User.class);
 	        sessionFactory.setHibernateProperties(hibernateProperties());
 	        return sessionFactory;
@@ -86,6 +88,8 @@ public class SpringConfig {
 	        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
 	        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
 	        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+	        
+
 
 	        return dataSource;
 	    }
@@ -98,7 +102,7 @@ public class SpringConfig {
 	        properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
 	        properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
 	        properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
-	        
+
 
 	        return properties;        
 	    }
@@ -108,6 +112,8 @@ public class SpringConfig {
 	    public HibernateTransactionManager transactionManager() {
 	       HibernateTransactionManager txManager = new HibernateTransactionManager();
 	       txManager.setSessionFactory(sessionfactory);
+	       
+
 
 	       return txManager;
 	    }
