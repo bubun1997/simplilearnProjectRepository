@@ -1,0 +1,24 @@
+<md-card>
+	<md-card-header>
+		<md-card-title>
+			<h1>Portfolios</h1>
+		</md-card-title>
+	</md-card-header>
+	<md-card-content>
+		<md-list>
+			<md-list-item *ngFor="let portfolio of portfolios" (click)="select.emit(portfolio)">
+				<h3 md-line>{{portfolio.name}} | <span class="symbol">{{portfolio.symbol}}</span></h3>
+				<button md-icon-button *ngIf="!readOnly"
+					(click)="delete.emit(portfolio.id);$event.stopImmediatePropagation();">
+					<md-icon>close</md-icon>
+				</button>
+				<p md-line>
+          Risk level: <strong>{{portfolio.risk}}</strong> |
+          <span *ngIf="portfolio.active">Active</span>
+          <span *ngIf="!portfolio.active">Inactive</span>
+				</p>
+			</md-list-item>
+		</md-list>
+	</md-card-content>
+</md-card>
+

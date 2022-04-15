@@ -1,0 +1,8 @@
+<div class="container">
+  <h4>Products Are Listed Below : </h4>
+</div>
+<div *ngFor="let product of myProducts">
+
+    <app-product [pro]="product" (deleteProduct)="productDelete($event)"></app-product>
+
+</div>

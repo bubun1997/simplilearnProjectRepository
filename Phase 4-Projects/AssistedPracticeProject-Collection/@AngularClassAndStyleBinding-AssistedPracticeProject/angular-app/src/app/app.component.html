@@ -1,0 +1,17 @@
+
+  <div class="div1">
+      <button class="btn btn-success" (click)="toggleGradient = ! toggleGradient">Toggle View</button>
+
+  </div>
+
+  <br><br>
+
+  <div [ngClass] = " toggleGradient?'blue':'red' ">
+      This is a View which will Toggle
+  </div>
+
+  <hr>
+
+  <div [ngStyle] = "{ 'color':'green','font-size': '20px'} ">
+    This is a another view which is fixed
+  </div>

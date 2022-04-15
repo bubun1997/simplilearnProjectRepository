@@ -1,0 +1,31 @@
+<md-card>
+	<md-card-header>
+		<md-card-title>
+			<h1>Stocks</h1>
+		</md-card-title>
+	</md-card-header>
+	<md-card-content>
+		<table>
+			<thead>
+			<tr>
+				<th>Symbol</th>
+				<th>Date</th>
+				<th>Open</th>
+				<th>Close</th>
+				<th>Volume</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let quote of history">
+				<td>{{quote.symbol}}</td>
+				<td>{{quote.date | date: 'MMM dd, yyyy'}}</td>
+				<td>{{quote.open | currency:'USD':true}}</td>
+				<td>{{quote.close | currency:'USD':true}}</td>
+				<td>{{quote.volume}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</md-card-content>
+	<md-card-actions>
+	</md-card-actions>
+</md-card>

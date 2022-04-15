@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome</h1>
+  <button type="button" class="btn btn-primary" (click)="showProducts = !showProducts">Toggle Products</button>
+</div>
+<hr>
+<div class="container" *ngIf="showProducts">
+
+  <h1>************** Products List **************</h1>
+
+  <ul *ngFor="let products of productslist">
+    <li>
+      Id : {{products.productId}} , Name : {{products.productName}} , Price : {{products.productPrice}}
+    </li>
+  </ul>
+
+</div>

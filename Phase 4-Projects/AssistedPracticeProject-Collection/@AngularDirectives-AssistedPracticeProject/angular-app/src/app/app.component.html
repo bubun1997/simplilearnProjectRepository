@@ -1,0 +1,15 @@
+<div class="container">
+
+    <h4>{{title}}</h4>
+    <br><br>
+    <button (click)="toggleView('show')" class="btn btn-success">Show View</button>&nbsp;
+    <button (click)="toggleView('hide')" class="btn btn-secondary">Hide View</button>
+     <hr>
+    <div *ngIf="showView">
+        
+      <ul *ngFor="let item of itemsList">
+        <li>Name : {{item.name}} , Price : {{item.price}}</li>
+      </ul>
+
+    </div>
+</div>
