@@ -1,0 +1,4 @@
+com\soumya\springbootapp\controller\MainController.class
+com\soumya\springbootapp\SpringBootFormEntriesTestApplication.class
+com\soumya\springbootapp\entity\User.class
+com\soumya\springbootapp\ServletInitializer.class
